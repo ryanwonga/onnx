@@ -14,6 +14,8 @@ import ai.djl.translate.TranslateException;
 public class RunModel {
   public static void main(String[] args)
       throws TranslateException, MalformedModelException, ModelNotFoundException, IOException {
+    System.setProperty("DJL_CACHE_DIR", "/usr/local/appian/ae/tomcat/apache-tomcat/temp");
+    System.setProperty("ENGINE_CACHE_DIR", "/usr/local/appian/ae/tomcat/apache-tomcat/temp");
     String modelUrl = "https://mlrepo.djl.ai/model/tabular/softmax_regression/ai/djl/onnxruntime/iris_flowers/0.0.1/iris_flowers.zip";
     Criteria<IrisFlower,Classifications> criteria = Criteria.builder()
         .setTypes(IrisFlower.class, Classifications.class)
